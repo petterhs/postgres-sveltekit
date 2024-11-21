@@ -29,6 +29,7 @@
     "@vercel/postgres": "^0.5.1",
     "dotenv": "^16.0.3",
     "ms": "^2.1.3",
+    "svelte-language-server": "^0.17.6",
     "ws": "^8.13.0"
   }
 }

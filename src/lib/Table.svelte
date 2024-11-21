@@ -1,5 +1,5 @@
 <script>
-	import ms from 'ms';
+	import ms from "ms";
 	/**
 	 * @type {{id: string, name: string, email: string, image: string, createdAt: string}[]}
 	 */
@@ -14,8 +14,8 @@
 	 * @param {undefined} [timeOnly]
 	 */
 	function timeAgo(timestamp, timeOnly) {
-		if (!timestamp) return 'never';
-		return `${ms(Date.now() - new Date(timestamp).getTime())}${timeOnly ? '' : ' ago'}`;
+		if (!timestamp) return "never";
+		return `${ms(Date.now() - new Date(timestamp).getTime())}${timeOnly ? "" : " ago"}`;
 	}
 	function refreshPage() {
 		location.reload();
@@ -29,7 +29,9 @@
 		<div class="space-y-1">
 			<h2 class="text-xl font-semibold">Recent Users</h2>
 			<p class="text-sm text-gray-500">
-				Fetched {users.length} users in {duration ? duration : 'unknown'} ms
+				Fetched {users.length} users in {duration
+					? duration
+					: "unknown"} ms
 			</p>
 		</div>
 		<button on:click={refreshPage}>Refresh Page</button>
@@ -46,11 +48,21 @@
 						class="rounded-full ring-1 ring-gray-900/5"
 					/>
 					<div class="space-y-1">
-						<p class="font-medium leading-none">{user.name}</p>
-						<p class="text-sm text-gray-500">{user.email}</p>
+						<p
+							class="font-medium leading-none"
+						>
+							{user.name}
+						</p>
+						<p
+							class="text-sm text-gray-500"
+						>
+							{user.email}
+						</p>
 					</div>
 				</div>
-				<p class="text-sm text-gray-500">{timeAgo(user.createdAt)}</p>
+				<p class="text-sm text-gray-500">
+					{timeAgo(user.createdAt)}
+				</p>
 			</div>
 		{/each}
 	</div>
